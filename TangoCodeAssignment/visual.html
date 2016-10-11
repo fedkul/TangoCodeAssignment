@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>TangoCode Javascript Assignment</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="assignment1.js"></script>
+<script src="assignment2.js"></script>
+<script src="assignment3.js"></script>
+
+</head>
+<body>
+	<h1>Welcome to my TangoCode Javascript Assignment!</h1>
+	<h2 id='assign1'>Assignment 1:</h2>
+	<h3>Method One Returns:</h3>
+	<p id="methodOne"></p>
+	<h3>Method Two Returns:</h3>
+	<p id="methodTwo"></p>
+	<h2>Assignment 2:</h2>
+	<pre id="results"></pre>
+	<h2>Assignment 3: 667734139064 Translation</h2>
+	<p id = "generated">The generated word is: </p>
+
+	<script>
+	
+		//assignment 1 inline code
+		var array = createArray(10);
+		console.log(array);
+		document.getElementById('assign1').innerHTML += ' Array: ' + array;
+		
+		document.getElementById("methodOne").innerHTML = differenceCalculatorMethodOne(array);
+		document.getElementById("methodTwo").innerHTML = differenceCalculatorMethodTwo(array);
+	
+		//assignment 2 inline code
+		var rect1 = {
+			x : 20,
+			y : 30,
+			width : 40,
+			height : 11,
+			name : 'rectangle 1'
+		};
+		var rect2 = {
+			x : 50,
+			y : 22,
+			width : 26,
+			height : 36,
+			name : 'rectangle 2'
+		};
+		var rect3 = {
+			x : 50,
+			y : 60,
+			width : 23,
+			height : 20,
+			name : 'rectangle 3'
+		};
+		var rect4 = {
+			x : 10,
+			y : 10,
+			width : 30,
+			height : 20,
+			name : 'rectangle 4'
+		};
+		var rect5 = {
+			x : 45,
+			y : 10,
+			width : 12,
+			height : 4,
+			name : 'rectangle 5'
+		};
+	
+		var results = "";
+	
+		var rectangles = [ rect1, rect2, rect3, rect4, rect5 ];
+		for (var i = 0; i < 5; i++) {
+			for (var j = i; j < 5; j++) {
+				if (intersect(rectangles[i], rectangles[j]))
+					results += rectangles[i].name + ' intersects with ' + rectangles[j].name + '\n';
+				else
+					results += rectangles[i].name + ' does not intersect with ' + rectangles[j].name + '\n';
+			}
+		}
+		document.getElementById('results').innerHTML = results;
+		console.log(results);
+		
+		//assignment 3 inline code
+		var num = 667734139064;
+		var word = reversal(num);
+		document.getElementById('generated').innerHTML += word;
+		
+		/* 
+			Thought Process:
+			I wanted a good way to easily visualize the results of my functions and debug them, so I
+			came up with this simple HTML page that uses the scripts I made.  I do not know whether it
+			was neessary or not, but I would consider it an essential material to my problem solving process.
+		*/
+		
+	</script>
+</body>
+</html>
